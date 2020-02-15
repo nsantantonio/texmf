@@ -1,0 +1,171 @@
+\ProvidesPackage{beamerthemeCornellPoster}  % this style was created by Thomas Deselaers an Philippe Dreuw, and modified by Nicholas Santantonio 2016
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \RequirePackage{beamercolorthemeCornellPosterColors}
+\usecolortheme{CornellPosterColors}
+
+\selectcolormodel{RGB}
+\mode<presentation>
+
+\newcommand{\manuscript}[1]{#1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamercolor{headline}{fg=Carnellian,bg=LightGray} % Header background
+\setbeamercolor{footline}{fg=Carnellian, bg=Carnellian} % ?
+\setbeamerfont{footline}{size=\large,series=\tt}
+\setbeamercolor{separation line}{bg=Carnellian} % separates header and footer
+\setbeamercolor{title in headline}{fg=DarkGray}  % title
+\setbeamercolor{author in headline}{fg=Carnellian} % Authors
+\setbeamercolor{institute in headline}{fg=Carnellian} % institution
+
+\setbeamercolor{framesubtitle}{fg=Carnellian, bg=Carnellian} % ?
+\setbeamercolor{author in head/foot}{fg=Carnellian, bg=White} % bottom label
+\setbeamercolor{title in head/foot}{fg=Carnellian, bg=Carnellian} % ?
+
+\setbeamercolor*{normal text}{fg=DarkGray, bg=White}  % background color and text (won't be text here usually)
+\setbeamercolor*{block body}{bg=LightGray ,fg=DarkGray} % main block background
+\setbeamercolor*{block title}{fg=LightGray,bg=DarkGray} % main block title background and text
+\setbeamerfont{block title}{size=\large,series=\bf}
+\setbeamercolor{upper separation line head}{fg=DarkGray}  % ?
+
+\setbeamercolor*{example body}{fg=Carnellian,bg=Carnellian} % ?
+\setbeamercolor*{example text}{fg=Carnellian,bg=Carnellian}
+\setbeamercolor*{example title}{bg=Carnellian,fg=Carnellian}
+
+\setbeamercolor{alerted text}{fg=Carnellian}
+
+\setbeamercolor{example text}{fg=Carnellian}
+\setbeamercolor{structure}{fg=Carnellian}   % Figure/table labels, bullets etc
+
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{block begin}{
+  \vskip.75ex
+  \begin{beamercolorbox}[ht=3.5ex,dp=0.5ex,center,leftskip=-1em,colsep*=.75ex]{block title}%
+    \usebeamerfont*{block title}%
+    {\phantom{Gg}\insertblocktitle}% phantom because of baseline problem
+  \end{beamercolorbox}%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[leftskip=1em,colsep*=.75ex,sep=0.5ex,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+  }
+  \setbeamertemplate{block end}{
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{headline}{  
+  \leavevmode
+
+  \begin{beamercolorbox}[wd=\paperwidth]{headline}
+    \begin{columns}[T]
+      \begin{column}{.02\paperwidth}
+      \end{column}
+      \begin{column}{.1\paperwidth}
+        \vskip4ex
+        \begin{center}
+          \includegraphics[width=.75\linewidth]{CULogo-red120px.pdf}
+          % \includegraphics[width=.75\linewidth]{USDA.png}
+          % \includegraphics[width=.48\linewidth]{CULogo-red120px.pdf}
+          % \includegraphics[width=.48\linewidth]{USDA.png}
+          % \vspace{1cm}
+        \end{center}
+        \vskip2ex
+      \end{column}
+      \begin{column}{.7\paperwidth}
+        \vskip4ex
+        % \raggedleft
+        \begin{center}
+	 \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\[2ex]}
+       	 \usebeamercolor{author in headline}{\color{fg}\Large{\insertauthor}\\[0.5ex]}
+       	 \usebeamercolor{institute in headline}{\color{fg}\Large{\insertinstitute}\\[1ex]}  
+         \usebeamercolor{title in headline}{\color{fg}\textbf{\Large{GENETICS Early Online: doi.org/10.1534/genetics.118.301851}}\\[1ex]}   
+	\end{center}
+      \end{column}
+      \begin{column}{.1\paperwidth}
+        \vskip10ex
+        \begin{center}
+          \includegraphics[width=.75\linewidth]{USDA.png}
+          % \includegraphics[width=.75\linewidth]{CULogo-red120px.pdf}
+          % \includegraphics[width=.75\linewidth]{MarchGeneticsCoverProof.pdf}
+        \end{center}
+        % \vskip2ex
+      \end{column}
+      \begin{column}{.02\paperwidth}
+      \end{column}
+    \end{columns}
+    \vskip2ex
+  \end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+    \rule{0pt}{3pt}
+  \end{beamercolorbox}
+}
+
+%  \setbeamertemplate{headline}{  
+%    \leavevmode
+%    \begin{beamercolorbox}[sep=0.5cm,wd=.8\paperwidth]{headline}
+%      \usebeamercolor{title in headline}{\raggedleft\color{fg}\textbf{\LARGE{\inserttitle}}\\[1ex]}
+%      \usebeamercolor{author in headline}{\raggedleft\color{fg}\large{\insertauthor}\\[1ex]}
+%      \usebeamercolor{institute in headline}{\raggedleft\color{fg}\large{\insertinstitute}\\[1ex]}     
+%    \end{beamercolorbox}%
+%    \begin{beamercolorbox}[wd=.2\paperwidth]{logo in headline}
+%      \centering
+%      \LARGE{LOGO}
+%    \end{beamercolorbox}  
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
+    \rule{0pt}{3pt}
+  \end{beamercolorbox}
+  
+  \leavevmode%
+  \begin{beamercolorbox}[ht=4ex,leftskip=1em,rightskip=1em]{author in head/foot}%
+    \texttt{\leftfoot}
+    \hfill
+    \texttt{\rightfoot}
+    \vskip1ex
+  \end{beamercolorbox}
+  \vskip0pt%
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
+    \rule{0pt}{3pt}
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Display a grid to help align images ... and it looks nice with this color scheme
+% \beamertemplategridbackground[0.2cm]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<all>
+
+% adapt height of itemize rectangles
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{itemize item}{\raisebox{0.12ex}{$\blacktriangleright$}\hskip0.1em}
+\setbeamertemplate{itemize subitem}{\raisebox{0.12ex}{$\triangleright$}\hskip0.1em}
+% or define your own template using \defbeamertemplate{itemize item}, see beameruserguide.pdf
+
+% equal font sizes for all levels
+\setbeamerfont{itemize/enumerate body}{size=\normalsize}
+\setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\normalsize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% TeX-master: "poster-surf"
+%%% End: 
+
+% set bibliography style
+\setbeamertemplate{bibliography item}[text]
+\setbeamercolor{bibliography item}{fg=black,bg=white}
+\setbeamercolor{bibliography entry author}{fg=black,bg=white}
+\setbeamercolor{bibliography item}{fg=black,bg=white}
